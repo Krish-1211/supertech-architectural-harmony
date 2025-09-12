@@ -18,6 +18,8 @@ import {
   Leaf
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import qualityTestingImage from "@/assets/quality-testing.jpg";
+import manufacturingFacilityImage from "@/assets/manufacturing-facility.jpg";
 
 const Excellence = () => {
   const excellenceAreas = [
@@ -324,6 +326,14 @@ const Excellence = () => {
             </div>
             
             <div className="relative">
+              <div className="relative mb-6">
+                <img 
+                  src={qualityTestingImage} 
+                  alt="Quality Testing Laboratory"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent rounded-lg"></div>
+              </div>
               <div className="grid grid-cols-2 gap-4">
                 <Card className="p-6 text-center bg-success/5">
                   <Factory className="h-12 w-12 mx-auto mb-4 text-success" />

@@ -18,6 +18,10 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { StatsCard } from "@/components/ui/stats-card";
+import ongcProjectImage from "@/assets/ongc-project.jpg";
+import industrialProjectImage from "@/assets/industrial-project.jpg";
+import educationalProjectImage from "@/assets/educational-project.jpg";
+import healthcareProjectImage from "@/assets/healthcare-project.jpg";
 
 const Projects = () => {
   const projectCategories = [
@@ -74,7 +78,8 @@ const Projects = () => {
         "Fire Safety Compliance",
         "Sustainable Materials"
       ],
-      status: "Completed"
+      status: "Completed",
+      image: ongcProjectImage
     },
     {
       title: "Indian Oil Refinery Complex",
@@ -90,7 +95,8 @@ const Projects = () => {
         "Weather Protection",
         "Low Maintenance Systems"
       ],
-      status: "Completed"
+      status: "Completed",
+      image: industrialProjectImage
     },
     {
       title: "IIT Delhi Academic Complex",
@@ -106,7 +112,8 @@ const Projects = () => {
         "Green Building Compliance",
         "Advanced Ventilation Integration"
       ],
-      status: "Completed"
+      status: "Completed",
+      image: educationalProjectImage
     },
     {
       title: "AIIMS Medical Center",
@@ -122,7 +129,8 @@ const Projects = () => {
         "Infection Control Compliance", 
         "Seamless Joint Design"
       ],
-      status: "In Progress"
+      status: "In Progress",
+      image: healthcareProjectImage
     }
   ];
 
@@ -296,13 +304,14 @@ const Projects = () => {
                     </CardContent>
                   </div>
                   
-                  <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-24 h-24 mx-auto mb-4 bg-gradient-primary rounded-lg flex items-center justify-center">
-                        <Building className="h-12 w-12 text-primary-foreground" />
-                      </div>
-                      <p className="text-muted-foreground text-sm">Project Documentation</p>
-                      <Button variant="ghost" size="sm" className="mt-2">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={`${project.title} project`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent flex items-end p-6">
+                      <Button variant="secondary" size="sm">
                         View Details
                         <ArrowRight className="ml-1 h-3 w-3" />
                       </Button>

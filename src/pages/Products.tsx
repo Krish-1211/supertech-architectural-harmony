@@ -17,6 +17,12 @@ import {
   CheckCircle2
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import metalCeilingImage from "@/assets/metal-ceiling-installation.jpg";
+import exteriorLouversImage from "@/assets/exterior-louvers.jpg";
+import exteriorCladdingImage from "@/assets/exterior-cladding.jpg";
+import tGridSystemImage from "@/assets/t-grid-system.jpg";
+import raisedFloorImage from "@/assets/raised-floor-system.jpg";
+import cubicleSystemsImage from "@/assets/cubicle-systems.jpg";
 
 const Products = () => {
   const mainProducts = [
@@ -27,7 +33,8 @@ const Products = () => {
       description: "Wide range of customizable metal ceiling solutions designed for superior acoustical performance and aesthetic appeal. Build-to-order flexibility ensures perfect fit for any architectural requirement.",
       features: ["Acoustic Absorption", "Customizable Design", "Easy Installation", "Low Maintenance"],
       materials: "AA 8011 / AA 3003 / AA 3105 Aluminium Alloys",
-      applications: ["Corporate Offices", "Healthcare", "Education", "Retail Spaces"]
+      applications: ["Corporate Offices", "Healthcare", "Education", "Retail Spaces"],
+      image: metalCeilingImage
     },
     {
       icon: <Wind className="h-8 w-8 text-accent-foreground" />,
@@ -36,7 +43,8 @@ const Products = () => {
       description: "Engineered louver systems that blend visual appeal with superior functionality. Designed for optimal airflow while maintaining weather resistance and architectural beauty.",
       features: ["Weather Resistant", "Optimal Airflow", "Architectural Beauty", "Durable Construction"],
       materials: "Galvanized Steel (IS–14246–1995, 120 GSM Zinc 277)",
-      applications: ["Building Facades", "Parking Structures", "Industrial Facilities", "Commercial Buildings"]
+      applications: ["Building Facades", "Parking Structures", "Industrial Facilities", "Commercial Buildings"],
+      image: exteriorLouversImage
     },
     {
       icon: <Building className="h-8 w-8 text-accent-foreground" />,
@@ -45,7 +53,8 @@ const Products = () => {
       description: "High-performance cladding systems that provide excellent weather protection while enhancing building aesthetics. Energy-efficient solutions for modern architecture.",
       features: ["Energy Efficient", "Weather Protection", "Thermal Performance", "Design Flexibility"],
       materials: "Premium Aluminium Alloys & Galvanized Steel",
-      applications: ["Commercial Buildings", "Residential Complexes", "Industrial Structures", "Institutional Buildings"]
+      applications: ["Commercial Buildings", "Residential Complexes", "Industrial Structures", "Institutional Buildings"],
+      image: exteriorCladdingImage
     },
     {
       icon: <Layers className="h-8 w-8 text-accent-foreground" />,
@@ -54,7 +63,8 @@ const Products = () => {
       description: "Robust support structures engineered for reliability and precision. Essential components for suspended ceiling installations with superior load-bearing capacity.",
       features: ["High Load Capacity", "Precision Engineering", "Easy Assembly", "Corrosion Resistant"],
       materials: "High-Grade Galvanized Steel",
-      applications: ["Suspended Ceilings", "Modular Systems", "Commercial Interiors", "Industrial Applications"]
+      applications: ["Suspended Ceilings", "Modular Systems", "Commercial Interiors", "Industrial Applications"],
+      image: tGridSystemImage
     },
     {
       icon: <Square className="h-8 w-8 text-accent-foreground" />,
@@ -63,7 +73,8 @@ const Products = () => {
       description: "Advanced access flooring solutions designed for contemporary infrastructure needs. Perfect for data centers, offices, and technical facilities requiring underfloor access.",
       features: ["Access Flexibility", "Load Distribution", "Cable Management", "Modular Design"],
       materials: "Steel & Aluminium Composite",
-      applications: ["Data Centers", "Server Rooms", "Corporate Offices", "Control Rooms"]
+      applications: ["Data Centers", "Server Rooms", "Corporate Offices", "Control Rooms"],
+      image: raisedFloorImage
     },
     {
       icon: <Home className="h-8 w-8 text-accent-foreground" />,
@@ -72,7 +83,8 @@ const Products = () => {
       description: "Contemporary cubicle and toilet partition systems designed for hygiene, privacy, and space optimization. Modern solutions for commercial washroom facilities.",
       features: ["Hygienic Design", "Privacy Optimization", "Easy Maintenance", "Vandal Resistant"],
       materials: "Antimicrobial Coated Panels",
-      applications: ["Commercial Restrooms", "Educational Facilities", "Healthcare Centers", "Public Buildings"]
+      applications: ["Commercial Restrooms", "Educational Facilities", "Healthcare Centers", "Public Buildings"],
+      image: cubicleSystemsImage
     }
   ];
 
@@ -222,15 +234,13 @@ const Products = () => {
                     </CardContent>
                   </div>
                   
-                  <div className={`bg-gradient-to-br from-primary/5 to-accent/5 p-8 flex items-center justify-center ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                    <div className="w-full h-64 bg-muted/30 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-24 h-24 mx-auto mb-4 bg-gradient-primary rounded-lg flex items-center justify-center">
-                          {product.icon}
-                        </div>
-                        <p className="text-muted-foreground text-sm">Product Visualization</p>
-                      </div>
-                    </div>
+                  <div className={`relative overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                    <img 
+                      src={product.image} 
+                      alt={`${product.title} installation`}
+                      className="w-full h-64 lg:h-full object-cover rounded-lg"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg"></div>
                   </div>
                 </div>
               </Card>

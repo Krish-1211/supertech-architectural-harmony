@@ -13,6 +13,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import manufacturingFacilityImage from "@/assets/manufacturing-facility.jpg";
 
 const About = () => {
   const values = [
@@ -94,16 +95,23 @@ const About = () => {
             </div>
             
             <div className="relative">
-              <div className="bg-gradient-primary rounded-lg p-8 shadow-strong">
-                <Factory className="h-16 w-16 text-primary-foreground mb-6" />
-                <h3 className="text-2xl font-bold text-primary-foreground mb-4">
-                  Manufacturing Excellence
-                </h3>
-                <p className="text-primary-foreground/90">
-                  Our Gujarat facilities feature cutting-edge technology, 
-                  in-house powder coating units, and zero-waste processes, 
-                  ensuring every product meets international quality standards.
-                </p>
+              <div className="relative overflow-hidden rounded-lg">
+                <img 
+                  src={manufacturingFacilityImage} 
+                  alt="SUPERTECH Manufacturing Facility"
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-primary/80 p-8 flex flex-col justify-end">
+                  <Factory className="h-16 w-16 text-primary-foreground mb-6" />
+                  <h3 className="text-2xl font-bold text-primary-foreground mb-4">
+                    Manufacturing Excellence
+                  </h3>
+                  <p className="text-primary-foreground/90">
+                    Our Gujarat facilities feature cutting-edge technology, 
+                    in-house powder coating units, and zero-waste processes, 
+                    ensuring every product meets international quality standards.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
