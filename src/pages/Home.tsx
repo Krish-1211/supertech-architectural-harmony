@@ -72,7 +72,7 @@ const Home = () => {
                 Explore Products
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 text-white border-white hover:bg-white hover:text-primary">
+              <Button variant="hero" size="lg" className="text-lg px-8">
                 View Projects
               </Button>
             </div>
